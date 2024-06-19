@@ -16,14 +16,15 @@ export interface SeriesConfig {
 	sourceId?: string;
 	propName?: string;
 	displayName?: string;
+	accPropName?: string;
+	accDisplayName?: string;
+
+	numHours?: number;
+	numMonths?: number;
 
 	scale?: number;
-	minValue?: number;
-	maxValue?: number;
 
-	barWidth?: number;
 	width?: number;
-	cornerRadius?: number;
 
 	color?: string;
 	backgroundColor?: string;
@@ -43,12 +44,12 @@ export function seriesConfig(config?: SeriesConfig): Required<SeriesConfig> {
 		sourceId: config?.sourceId || "EO/OC/ROOF1/SOLAR/1",
 		propName: config?.propName || "watts",
 		displayName: config?.displayName || "Power (kW)",
+		accPropName: config?.accPropName || "wattHours",
+		accDisplayName: config?.accDisplayName || "Energy (kWh)",
+		numHours: config?.numHours || 24,
+		numMonths: config?.numMonths || 13,
 		scale: config?.scale || 1000,
-		minValue: config?.minValue || 0,
-		maxValue: config?.maxValue || 10,
-		barWidth: config?.barWidth || 50,
-		width: config?.width || 300,
-		cornerRadius: config?.cornerRadius || 0,
+		width: config?.width || 720,
 		color: config?.color || "#008000",
 		backgroundColor: config?.backgroundColor || "#FFFFFF",
 		placeholderColor: config?.placeholderColor || "#EDEDED",

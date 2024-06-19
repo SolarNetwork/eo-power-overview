@@ -1,6 +1,6 @@
 import "../scss/style.scss";
 import "billboard.js/dist/billboard.css";
-import { loadData as snLoadData } from "./sn.ts";
+import { loadHoursData, loadMonthsData } from "./sn.ts";
 import { SeriesConfig, seriesConfig } from "./utils.ts";
 
 // TODO: populate from document location query parameters
@@ -13,17 +13,34 @@ if (config.backgroundColor != "#FFFFFF") {
 		?.style.setProperty("background-color", config.backgroundColor);
 }
 
-snLoadData(config)
+loadHoursData(config)
 	.then((datum) => {
-		import("./charts.ts").then(({ renderChart, updateChart }) => {
-			renderChart(config, datum);
+		import("./charts.ts").then(({ renderHoursChart, updateHoursChart }) => {
+			renderHoursChart(config, datum);
 			setInterval(() => {
-				snLoadData(config).then((update) => {
-					updateChart(config, update);
+				loadHoursData(config).then((update) => {
+					updateHoursChart(update);
 				});
 			}, 60_000);
 		});
 	})
 	.catch((reason) => {
-		console.error("Error generating chart: %s", reason);
+		console.error("Error generating hours chart: %s", reason);
+	});
+
+loadMonthsData(config)
+	.then((datum) => {
+		import("./charts.ts").then(
+			({ renderMonthsChart, updateMonthsChart }) => {
+				renderMonthsChart(config, datum);
+				setInterval(() => {
+					loadMonthsData(config).then((update) => {
+						updateMonthsChart(update);
+					});
+				}, 600_000);
+			}
+		);
+	})
+	.catch((reason) => {
+		console.error("Error generating months chart: %s", reason);
 	});

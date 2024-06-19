@@ -1,8 +1,8 @@
 {
-  "name": "eo-chart-donut",
+  "name": "eo-power-overview",
   "private": true,
   "version": "1.0.0",
-  "homepage": "https://go.solarnetwork.net/nz/eo/donut/",
+  "homepage": "https://go.solarnetwork.net/nz/eo/power-overview/",
   "author": {
     "name": "Matt Magoffin",
     "email": "matt@solarnetwork.net"
@@ -18,12 +18,14 @@
     "@popperjs/core": "^2.11.8",
     "billboard.js": "^3.12.4",
     "d3-array": "^3.2.4",
+    "d3-time": "^3.1.0",
     "d3-time-format": "^4.1.0",
     "solarnetwork-api-core": "^2.2.2"
   },
   "devDependencies": {
     "@ava/typescript": "^5.0.0",
     "@types/d3-array": "^3.2.1",
+    "@types/d3-time": "^3.0.3",
     "@types/d3-time-format": "^4.0.3",
     "@typescript-eslint/eslint-plugin": "^7.13.1",
     "@typescript-eslint/parser": "^7.13.1",
