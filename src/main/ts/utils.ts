@@ -43,7 +43,7 @@ export function seriesConfig(config?: SeriesConfig): Required<SeriesConfig> {
 		sourceId: config?.sourceId || "EO/OC/ROOF1/SOLAR/1",
 		propName: config?.propName || "watts",
 		displayName: config?.displayName || "Power (kW)",
-		scale: 1000 / (config?.scale || 1),
+		scale: config?.scale || 1000,
 		minValue: config?.minValue || 0,
 		maxValue: config?.maxValue || 10,
 		barWidth: config?.barWidth || 50,
