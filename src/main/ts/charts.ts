@@ -3,7 +3,7 @@ import { timeFormat } from "d3-time-format";
 import { GeneralDatum, SeriesConfig } from "./utils";
 
 const hoursTooltipDateFormat = timeFormat("%Y-%m-%d %H:%M");
-const monthsTooltipDateFormat = timeFormat("%Y-%m");
+const monthsTooltipDateFormat = timeFormat("%b %y");
 
 let hoursChart: Chart;
 let monthsChart: Chart;
@@ -129,7 +129,7 @@ export function renderMonthsChart(
 				type: "timeseries",
 				localtime: false,
 				tick: {
-					format: "%Y-%m",
+					format: "%b %y",
 				},
 				padding: {
 					left: 20,
