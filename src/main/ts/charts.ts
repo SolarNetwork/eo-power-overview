@@ -55,6 +55,7 @@ export function renderHoursChart(
 				localtime: false,
 				tick: {
 					fit: false,
+					count: 4,
 					format: hoursTooltipDateFormat,
 				},
 				padding: {
@@ -132,8 +133,8 @@ export function renderMonthsChart(
 					format: "%b %y",
 				},
 				padding: {
-					left: 20,
-					right: 10,
+					left: 50,
+					right: 50,
 					unit: "px",
 				},
 			},
