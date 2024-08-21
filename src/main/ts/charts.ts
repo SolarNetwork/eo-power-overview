@@ -55,7 +55,7 @@ export function renderHoursChart(
 				localtime: false,
 				tick: {
 					fit: false,
-					format: "%Y-%m-%d %H:%M",
+					format: hoursTooltipDateFormat,
 				},
 				padding: {
 					left: 20,
