@@ -130,7 +130,7 @@ export function renderMonthsChart(
 				type: "timeseries",
 				localtime: false,
 				tick: {
-					format: "%b %y",
+					format: monthsTooltipDateFormat,
 				},
 				padding: {
 					left: 50,
